@@ -147,6 +147,11 @@ RCT_EXPORT_METHOD(show:(NSDictionary *)args)
             activityView.popoverPresentationController.permittedArrowDirections = 0;
         }
     }
+    
+    if (ctrl.presentedViewController != nil) {
+        [ctrl dismissViewControllerAnimated:NO completion:nil];
+    }
+    
     [ctrl presentViewController:activityView animated:YES completion:nil];
 }
 
